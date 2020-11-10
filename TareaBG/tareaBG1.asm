@@ -58,6 +58,12 @@ main PROC
     mov EDX, OFFSET textofin
     call CrLf
     call WriteString
+    mov ESI, OFFSET A
+	mov ECX, (LENGTHOF A)*4
+	mov EBX, TYPE A
+	call DumpMem
+	call Crlf
+    
     exit
 main ENDP
 

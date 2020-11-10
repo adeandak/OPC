@@ -14,7 +14,7 @@ textofin BYTE "ADIOS", 0
 main PROC
 
     movzx EAX, Svector+6
-    movzx EBX, Cvector+6
+    movsx EBX, Cvector+6 ;hay que ponerlo como movsx por que es signado
     ADD EAX,EBX
     mov EDX, OFFSET textoS
     call WriteString
@@ -22,7 +22,7 @@ main PROC
     call CrLf
 
     movzx EAX, Svector+4
-    movzx EBX, Cvector+4
+    movsx EBX, Cvector+4
     imul EBX
     call CrLf
     mov EDX, OFFSET textoP
